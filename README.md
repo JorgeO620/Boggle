@@ -4,7 +4,7 @@ Project Members:
 Jack Tobin (back-end),
 Jorge Otero-Beltran(back-end),
 Mahamil Gadit (front-end),
-Kyeonghan Lee (front-end),
+Kyeonghan Lee (front-end)
 
 Project Description:
 The number one problem that newly graduated college students face is finding a job, a problem that we are experiencing personally. Without knowing where to start, we eventually came across a platform by the name of LinkedIn.
