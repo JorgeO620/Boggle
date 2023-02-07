@@ -1,6 +1,6 @@
-**Intro to Software Engineering Sprint 1
+**Intro to Software Engineering Sprint 1**
 
-***User stories
+***User stories***
 
 As a founder, I'd like to be able to build a list of contacts (other users), so that I can strengthen business relationships and have them more readily available to reach on Boggle than other users. 
 
@@ -20,7 +20,7 @@ As an expert in my field, I would like  to share my knowledge, so I can strength
 
 ---
 
-***What issues our team planned to address?
+***What issues our team planned to address?***
 
 
 Get Angular links and site set up (Frontend)
@@ -31,10 +31,10 @@ Set up contacts list (prior employees, recruiters, etc.) (Backend)
 
 ---
 
-***Which ones were successfully completed
+***Which ones were successfully completed***
 
 ---
 
-***Which ones didn’t and why?
+***Which ones didn’t and why?***
 
 ---
