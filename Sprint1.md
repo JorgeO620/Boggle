@@ -18,6 +18,7 @@ As an employer, I want to be able to search for potential job candidates while e
 
 As an expert in my field, I would like  to share my knowledge, so I can strengthen another user’s skills while making some extra money.
 
+---
 
 What issues our team planned to address?
 
@@ -28,6 +29,7 @@ Begin construction of user profiles (Backend)
 
 Set up contacts list (prior employees, recruiters, etc.) (Backend)
 
+---
 
 Which ones were successfully completed
 
