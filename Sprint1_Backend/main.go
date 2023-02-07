@@ -74,3 +74,35 @@ func main() {
 	// router.HandleFunc("/blog", Validate(BlogEndpoint)).Methods("POST")
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
 }
+
+func RegisterEndpoint(w http.ResponseWriter, req *http.Request) {
+	var data map[string]interface{}
+	_ = json.NewDecoder(req.Body).Decode(&data)
+	id := uuid.NewV4().String()
+	passHash, _ := bcrypt.GenerateFromPassword([]byte(data["password"].(string)), 20)
+	account := Account{
+		Type:     "account",
+		Pid:      id,
+		Email:    data["email"].(string),
+		Password: string(passHash),
+	}
+	profile := Profile{
+		Type:         "profile",
+		Firstname:    data["firstname"].(string),
+		Lastname:     data["lastname"].(string),
+		currJobTitle: data["jobtitle"].(string),
+	}
+	_, err := bucket.Insert(id, profile, 0)
+	if err != nil {
+		w.WriteHeader(401)
+		w.Write([]byte(err.Error()))
+		return
+	}
+	_, err = bucket.Insert(data["email"].(string), account, 0)
+	if err != nil {
+		w.WriteHeader(401)
+		w.Write([]byte(err.Error()))
+		return
+	}
+	json.NewEncoder(w).Encode(account)
+}
