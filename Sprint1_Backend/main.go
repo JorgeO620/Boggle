@@ -54,26 +54,7 @@ type Session struct {
 
 var bucket *gocb.Bucket
 
-func Validate(next http.HandlerFunc) http.HandlerFunc {}
-
-func RegisterEndpoint(w http.ResponseWriter, req *http.Request) {}
-func LoginEndpoint(w http.ResponseWriter, req *http.Request) {}
-func AccountEndpoint(w http.ResponseWriter, req *http.Request) {}
-func BlogsEndpoint(w http.ResponseWriter, req *http.Request) {}
-func BlogEndpoint(w http.ResponseWriter, req *http.Request) {}
-
-func main() {
-	fmt.Println("Starting the Go server...")
-	router := mux.NewRouter()
-	cluster, _ := gocb.Connect("couchbase://localhost")
-	bucket, _ = cluster.OpenBucket("default", "")
-	router.HandleFunc("/account", RegisterEndpoint).Methods("POST")
-	router.HandleFunc("/login", LoginEndpoint).Methods("POST")
-	router.HandleFunc("/account", Validate(AccountEndpoint)).Methods("GET")
-	// router.HandleFunc("/blogs", Validate(BlogsEndpoint)).Methods("GET")
-	// router.HandleFunc("/blog", Validate(BlogEndpoint)).Methods("POST")
-	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
-}
+//func Validate(next http.HandlerFunc) http.HandlerFunc {}
 
 func RegisterEndpoint(w http.ResponseWriter, req *http.Request) {
 	var data map[string]interface{}
@@ -105,4 +86,21 @@ func RegisterEndpoint(w http.ResponseWriter, req *http.Request) {
 		return
 	}
 	json.NewEncoder(w).Encode(account)
+}
+func LoginEndpoint(w http.ResponseWriter, req *http.Request) {}
+func AccountEndpoint(w http.ResponseWriter, req *http.Request) {}
+func BlogsEndpoint(w http.ResponseWriter, req *http.Request) {}
+func BlogEndpoint(w http.ResponseWriter, req *http.Request) {}
+
+func main() {
+	fmt.Println("Starting the Go server...")
+	router := mux.NewRouter()
+	cluster, _ := gocb.Connect("couchbase://localhost")
+	bucket, _ = cluster.OpenBucket("default", "")
+	//router.HandleFunc("/account", RegisterEndpoint).Methods("POST")
+	//router.HandleFunc("/login", LoginEndpoint).Methods("POST")
+	//router.HandleFunc("/account", Validate(AccountEndpoint)).Methods("GET")
+	// router.HandleFunc("/blogs", Validate(BlogsEndpoint)).Methods("GET")
+	// router.HandleFunc("/blog", Validate(BlogEndpoint)).Methods("POST")
+	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
 }
