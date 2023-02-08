@@ -1,4 +1,4 @@
-Project name: BOGGLE
+#####Project name: BOGGLE#####
 
 Project Members:
 Jack Tobin (back-end),
