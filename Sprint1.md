@@ -33,8 +33,12 @@ Set up contacts list (prior employees, recruiters, etc.) (Backend)
 
 ***Which ones were successfully completed***
 
----
+
+We were succefully able to modify two files "app.component.html" and "app.component.ts" to display what we needed.For frontend work we were able to setup angular and were able to make a mock-up welcome page displaying the title of the project and with a login screen. We were also able to use the login screen using a username and password that was already represented in the code.
+
 
 ***Which ones didn’t and why?***
+
+As mentioned previously our code shows a potential username and password that is fixed to what we had coded therefore, a user can not make up a username or password that is not already embedded into our code. We currently dont have the right database to extract user profiles and need to modify the code to be able to take saved usernames and passwords that is unique to a user.
 
 ---
