@@ -195,7 +195,7 @@ func main() {
 		Firstname: "John",
 		Lastname: "Smith",
 	}, 0)
-	bucket.Get("nraboy", &Professional)
+	bucket.Get("JohnSmith", &Professional)
 	jsonBytes, _ := json.Marshal(Professional)
 	fmt.Println(string(jsonBytes))
 	// router.HandleFunc("/account", RegisterEndpoint).Methods("POST")
