@@ -1,0 +1,12 @@
+<div  *ngIf="visible">
+  <div>Welcome to Boggle!</div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <input type="text" placeholder="id" [(ngModel)]="id"/>
+  <input type="text" placeholder="password"  [(ngModel)]="pwd"/>
+  <button (click)='tryToLogin()'>Login</button>
+</div>
+<div *ngIf="visible1">Success to Login!</div>
+<div *ngIf="visible2">Success to Login!</div>
