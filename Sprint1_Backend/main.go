@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -18,21 +17,21 @@ import (
 	uuid "github.com/satori/go.uuid"
 )
 
-type Account struct {
+type Account struct { //stores data used for log-in, not public
 	Type     string `json:"type,omitempty"`
 	Pid      string `json:"pid,omitempty"`
 	Email    string `json:"email,omitempty"`
 	Password string `json:"password,omitempty"`
 }
 
-type Profile struct {
+type Profile struct { //stores primary profile info, public
 	Type      string `json:"type,omitempty"`
 	Firstname string `json:"firstname,omitempty"`
 	Lastname  string `json:"lastname,omitempty"`
 	currJobTitle string `json:"currjobtitle,omitempty"`
 }
 
-type Resume struct {
+type Resume struct { //Additional profile info, public
 	Type      string `json:"type,omitempty"`
 	pastJobTitles string `json:"pastjobtitle,omitempty"`
 	education string `json:"education,omitempty"`
@@ -40,9 +39,17 @@ type Resume struct {
 	projects string `json:"projects,omitempty"`
 }
 
-type Session struct {
+type Session struct {  //Info used for multiple users, not visible to user
 	Type string `json:"type,omitempty"`
 	Pid  string `json:"pid,omitempty"`
+}
+
+type Contacts struct { 
+	// List of previous coworkers/employers, public. Friends stores basic info, Links
+	// stores addresses of their respective page. A profile in Friends and its respective
+	// address in Links share an address
+	Friends   []Profile
+	Links     []string
 }
 
 // type Blog struct {
