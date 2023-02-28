@@ -100,6 +100,20 @@ func AccountEndpoint(w http.ResponseWriter, req *http.Request) {}
 func BlogsEndpoint(w http.ResponseWriter, req *http.Request) {}
 func BlogEndpoint(w http.ResponseWriter, req *http.Request) {}
 
+func server(sHost string, sType string, sPort string) {
+	server, err := net.Listen(sType, sHost + ":" + sPort)
+	if err != nil {
+		os.Exit(1)
+	}
+	defer server.Close()
+	for {
+		connection, err := server.Accept()
+		if err != nil {
+			os.Exit(1)
+		}
+	}
+}
+
 func main() {
 	fmt.Println("Starting the Go server...")
 	router := mux.NewRouter()
