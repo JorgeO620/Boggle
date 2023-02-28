@@ -1,0 +1,41 @@
+ 
+
+<div class="container" *ngIf="!visible1 && !visible2">
+	<div class="screen">
+		<div class="screen__content">
+      
+      <div  style="padding: 5px;" *ngIf="visible1 || visible2">
+        <div>Success to Login!</div>
+      </div>
+			<div class="login">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" id="id" placeholder="User name / Email" [(ngModel)]="id">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" id="password"  placeholder="Password" [(ngModel)]="pwd">
+				</div>
+				<button class="button login__submit"  id="log-in" (click)='tryToLogin()' [routerLink]="['/app']">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+
+			</div>
+
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+
+ 
+	</div>
+</div>
+ 
+
+<div class="container" *ngIf="visible1 || visible2">
+  <img style="width:100%" [src]="'assets/back.png'" alt="image">
+</div>
