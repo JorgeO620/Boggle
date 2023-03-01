@@ -1,9 +1,11 @@
 package main
 
-import "testing"
-import "reflect"
+import (
+	"reflect"
+	"testing"
+)
 
-func testfNameUpdate(t *testing.T) {
+func TestFNameUpdate(t *testing.T) {
 	tProfile := Profile{
 		Type:         "profile",
 		Firstname:    "John",
@@ -24,11 +26,11 @@ func testfNameUpdate(t *testing.T) {
 	got := tProfile
 	want := fProfile
 	if !reflect.DeepEqual(got, want) {
-		t.Errorf("got %q, wanted &q", got, want)
+		t.Errorf("got %q, wanted %q", got, want)
 	}
 }
 
-func testlNameUpdate(t *testing.T) {
+func TestLNameUpdate(t *testing.T) {
 	tProfile := Profile{
 		Type:         "profile",
 		Firstname:    "John",
@@ -49,11 +51,11 @@ func testlNameUpdate(t *testing.T) {
 	got := tProfile
 	want := fProfile
 	if !reflect.DeepEqual(got, want) {
-		t.Errorf("got %q, wanted &q", got, want)
+		t.Errorf("got %q, wanted %q", got, want)
 	}
 }
 
-func testjobUpdate(t *testing.T) {
+func TestJobUpdate(t *testing.T) {
 	tProfile := Profile{
 		Type:         "profile",
 		Firstname:    "John",
@@ -74,21 +76,21 @@ func testjobUpdate(t *testing.T) {
 	got := tProfile
 	want := fProfile
 	if !reflect.DeepEqual(got, want) {
-		t.Errorf("got %q, wanted &q", got, want)
+		t.Errorf("got %q, wanted %q", got, want)
 	}
 }
 
-func testemailUpdate(t *testing.T) {
-	tAccount := Account {
-		Type: "Account",
-		Pid: "00000001",
-		Email: "123@gmail.com",
+func TestEmailUpdate(t *testing.T) {
+	tAccount := Account{
+		Type:     "Account",
+		Pid:      "00000001",
+		Email:    "123@gmail.com",
 		Password: "password",
 	}
-	fAccount := Account {
-		Type: "Account",
-		Pid: "00000001",
-		Email: "abc@hotmail.com",
+	fAccount := Account{
+		Type:     "Account",
+		Pid:      "00000001",
+		Email:    "abc@hotmail.com",
 		Password: "password",
 	}
 	var x *Account
@@ -101,17 +103,17 @@ func testemailUpdate(t *testing.T) {
 	}
 }
 
-func testpasswordUpdate(t *testing.T) {
-	tAccount := Account {
-		Type: "Account",
-		Pid: "00000001",
-		Email: "123@gmail.com",
+func TestPasswordUpdate(t *testing.T) {
+	tAccount := Account{
+		Type:     "Account",
+		Pid:      "00000001",
+		Email:    "123@gmail.com",
 		Password: "password",
 	}
-	fAccount := Account {
-		Type: "Account",
-		Pid: "00000001",
-		Email: "123@gmail.com",
+	fAccount := Account{
+		Type:     "Account",
+		Pid:      "00000001",
+		Email:    "123@gmail.com",
 		Password: "securePassword1!",
 	}
 	var x *Account
@@ -124,7 +126,7 @@ func testpasswordUpdate(t *testing.T) {
 	}
 }
 
-func testaddContact(t *testing.T) {
+func TestAddContact(t *testing.T) {
 	tProfile := Profile{
 		Type:         "profile",
 		Firstname:    "John",
@@ -133,12 +135,11 @@ func testaddContact(t *testing.T) {
 		pageLink:     "www.website.com",
 	}
 	var tContacts Contacts
-	fContacts := Contacts {
+	fContacts := Contacts{
 		Friends: []Profile{tProfile},
-		Links: []string{"www.website.com"},
+		Links:   []string{"www.website.com"},
 	}
-	var x *Contacts
-	x = &tContacts
+	var x = &tContacts
 	addContact(x, tProfile)
 	got := tContacts
 	want := fContacts
