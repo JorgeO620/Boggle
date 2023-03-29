@@ -1,9 +1,9 @@
-// This request was used to create a new account that has "John" as its username and "password12345" as its password in the MySQL database with the "POST" method. 
+// This request was used to create a new account that has "John" as its username and "password12345" as its password in the MySQL database with the POST method. 
 {
     "password": "password12345"
 }
 
-// This request was used to update the password of the account with the username "John" in the MySQL database to instead be "John123" with the "PUT" method.
+// This request was used to update the password of the account with the username "John" in the MySQL database to instead be "John123" with the PUT method.
 // Also make sure to remove the previous request before sending this one.
 {
     "password": "John123"
