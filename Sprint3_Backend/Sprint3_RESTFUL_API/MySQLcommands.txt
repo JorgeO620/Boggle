@@ -7,6 +7,7 @@ CREATE TABLE accounts
 
 ALTER TABLE accounts ALTER username SET DEFAULT 'John';
 
+
 INSERT INTO accounts (username, password) VALUES
     ('Bob', 'password123'),
     ('Lisa', 'password4321');
