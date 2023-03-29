@@ -1,0 +1,93 @@
+ 
+
+<div class="container" *ngIf="!visible1 && !visible2">
+	<div class="screen">
+		<div class="screen__content">
+      
+      <div  style="padding: 5px;" *ngIf="visible1 || visible2">
+        <div>Success to Login!</div>
+      </div>
+			<div class="login">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" id="id" placeholder="User name / Email" [(ngModel)]="id">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" id="password"  placeholder="Password" [(ngModel)]="pwd">
+				</div>
+				<button class="button login__submit"  id="log-in" (click)='tryToLogin()' [routerLink]="['/app']">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+
+			</div>
+
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+
+ 
+	</div>
+</div>
+ 
+<html>
+<head>
+<style>
+body {
+    background-image: url("assets/back.png");
+}
+</style>
+</head>
+<body>
+	<ul class="menu">
+		<li>
+		<a href="#">HOME</a>
+	  </li>
+	  <li>
+		<a href="#">ABOUT US</a>
+		<ul class="submenu">
+		  <li><a href="#">submenu01</a></li>
+		  <li><a href="#">submenu02</a></li>
+		  <li><a href="#">submenu03</a></li>
+		  <li><a href="#">submenu04</a></li>
+		  <li><a href="#">submenu05</a></li>
+		</ul>
+	  </li>
+	  <li>
+		<a href="#">JOBS</a>
+		<ul class="submenu">
+		  <li><a href="#">submenu01</a></li>
+		  <li><a href="#">submenu02</a></li>
+		  <li><a href="#">submenu03</a></li>
+		  <li><a href="#">submenu04</a></li>
+		  <li><a href="#">submenu05</a></li>
+		</ul>
+	  </li>
+	  <li>
+		<a href="#">REGISTER</a>
+		<ul class="submenu">
+		  <li><a href="#">submenu01</a></li>
+		  <li><a href="#">submenu02</a></li>
+		  <li><a href="#">submenu03</a></li>
+		  <li><a href="#">submenu04</a></li>
+		  <li><a href="#">submenu05</a></li>
+		</ul>
+	  </li>
+	  <li>
+		<a href="#">MY</a>
+		<ul class="submenu">
+		  <li><a href="#">submenu01</a></li>
+		  <li><a href="#">submenu02</a></li>
+		  <li><a href="#">submenu03</a></li>
+		  <li><a href="#">submenu04</a></li>
+		  <li><a href="#">submenu05</a></li>
+		</ul>
+	  </li>
+	</ul>
+</body>
+</html>
