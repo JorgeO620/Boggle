@@ -4,3 +4,5 @@ CREATE TABLE accounts
      password VARCHAR(150) NOT NULL,
      PRIMARY KEY      (username)
      );
+
+ALTER TABLE accounts ALTER username SET DEFAULT 'John';
