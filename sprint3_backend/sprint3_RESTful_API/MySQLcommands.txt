@@ -1,0 +1,13 @@
+
+CREATE TABLE accounts
+    (
+     username VARCHAR(150) NOT NULL,
+     password VARCHAR(150) NOT NULL,
+     PRIMARY KEY      (username)
+     );
+
+ALTER TABLE accounts ALTER username SET DEFAULT 'John';
+
+INSERT INTO accounts (username, password) VALUES
+    ('Bob', 'password123'),
+    ('Lisa', 'password4321');
