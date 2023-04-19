@@ -5,10 +5,27 @@ In addition, information on the website and information such as e-mails and phon
 
 **Fronted Cypress Test**
 
-
+- login: Input ID and password on the loginpage and press the login button
+- register:  
+- signout: Click the profile icon and signout button
 
 **Frontend Unit Test**
 
+- Display "Personal Info" section
+- Display "About me" section
+- Creat "Connect" components
+- Confirm "Recruiter's List" exists
+- Create header components
+- Display "Boggle" content
+- Display menu item such as "Home", "About Us" and "Connect"
+- Display "News" section
+- Display "Events" section
+- Create "Home" components
+- Display home image
+- Create layout components
+- Create app components
+- Create about "About Us" components
+- Confirm that "About Us" title exists
 
 **Backend**
 
