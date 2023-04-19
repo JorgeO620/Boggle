@@ -1,6 +1,6 @@
 **Frontend**
 
-In sprint 4, we changed the UI of the login screen and made it more proffesional looking to make it appeal to a user. We also made changes to the home screen to where it displays recruiter information and a litttle summary about them. We also implemented a box to display current events and new. We also created an about us page where it displays a little bit of background of our company and added an address,phone number , and company email. We made changes to the "my profile" page where it is able to display a users profile information. We also impleneted a "connect" tab where users are able to connect with recruiters and be able to send them messages.
+In sprint 4, we changed the UI of the login screen and made it more proffesional looking to make it appeal to a user. We also made changes to the home screen to where it displays recruiter information and a litttle summary about them. We also implemented a box to display current events and news configured to each user and their previous searches and related interests. We also created an about us page where it displays a little bit of background of our company and added an address, phone number, and company email. We made changes to the "my profile" page where it is able to display a users profile information. We also impleneted a "connect" tab where users are able to connect with recruiters and be able to send them messages.
 
 **Fronted Cypress Test**
 
