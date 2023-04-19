@@ -8,12 +8,15 @@ import (
   "fmt"
   "io/ioutil"
 )
+
 type Account struct {
   Username string `json:"username"`
   Password string `json:"password"`
 }
+
 var db *sql.DB
 var err error
+
 func main() {
 db, err = sql.Open("mysql", "root:David620@tcp(127.0.0.1:3306)/demo")
   if err != nil {
@@ -28,6 +31,8 @@ db, err = sql.Open("mysql", "root:David620@tcp(127.0.0.1:3306)/demo")
   router.HandleFunc("/accounts/{username}", deletePost).Methods("DELETE")
   http.ListenAndServe(":8000", router)
 }
+
+// encodes slice of all usernames and their mathching passwords
 func getPosts(w http.ResponseWriter, r *http.Request) {
   w.Header().Set("Content-Type", "application/json")
   var accounts []Account
@@ -46,6 +51,8 @@ func getPosts(w http.ResponseWriter, r *http.Request) {
   }
   json.NewEncoder(w).Encode(accounts)
 }
+
+// creates new account
 func createPost(w http.ResponseWriter, r *http.Request) {
   w.Header().Set("Content-Type", "application/json")
   stmt, err := db.Prepare("INSERT INTO accounts(username, password) VALUES(?, ?)")
@@ -66,6 +73,8 @@ func createPost(w http.ResponseWriter, r *http.Request) {
   }
   fmt.Fprintf(w, "New account was created")
 }
+
+// encodes account with desired username
 func getPost(w http.ResponseWriter, r *http.Request) {
   w.Header().Set("Content-Type", "application/json")
   params := mux.Vars(r)
@@ -83,6 +92,8 @@ func getPost(w http.ResponseWriter, r *http.Request) {
   }
   json.NewEncoder(w).Encode(account)
 }
+
+// updates the password of a specific account based on account's username
 func updatePost(w http.ResponseWriter, r *http.Request) {
   w.Header().Set("Content-Type", "application/json")
   params := mux.Vars(r)
@@ -103,6 +114,8 @@ func updatePost(w http.ResponseWriter, r *http.Request) {
   }
   fmt.Fprintf(w, "Account with username = %s was updated", params["username"])
 }
+
+// delete accounts with desired username
 func deletePost(w http.ResponseWriter, r *http.Request) {
   w.Header().Set("Content-Type", "application/json")
   params := mux.Vars(r)
@@ -115,4 +128,23 @@ func deletePost(w http.ResponseWriter, r *http.Request) {
     panic(err.Error())
   }
   fmt.Fprintf(w, "Account with username = %s was deleted", params["username"])
+}
+
+// encodes friends and links slices of account with desired username
+func friendsPost(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	params := mux.Vars(r)
+	result, err := db.Query("SELECT friends FROM accounts WHERE username = ?", params["username"])
+	if err != nil {
+		panic(err.Error())
+	}
+	defer result.Close()
+	var account Account
+	for result.Next() {
+		err := result.Scan(&account.Friends)
+		if err != nil {
+			panic(err.Error())
+		}
+	}
+	json.NewEncoder(w).Encode(account)
 }
