@@ -1,0 +1,27 @@
+/* Request bodies that were used in the presentation video. It should also be noted that the POST method 
+for both tables was used to create some example records that would already be in the database before testing 
+the API on Postman in the presentation video. */
+
+/* Demo POST method request body for accounts table */
+{
+    "username": "Robert",
+    "password": "password5000000"
+}
+
+/* Demo POST method request body for posts table */
+{
+    "company": "Lockheed Martin",
+    "posttitle": "Hardware Engineer Needed",
+    "post": "Need a hardware engineer with minimum 6 years of experience and a specialization in robotics.",
+    "username": "Bob"
+}
+
+/* Demo PUT method request body for accounts table */
+{
+    "password": "password12345"
+}
+
+/* Demo PUT method request body for posts table */
+{
+    "post": "Need a software engineer with minimum 10 years of experience and a specialization in artificial intelligence."
+}
