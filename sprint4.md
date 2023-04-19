@@ -13,4 +13,5 @@ In addition, information on the website and information such as e-mails and phon
 **Backend**
 
 **Unit Tests**
+
 In Sprint 4 we wrote unit tests for functions using the Restful API. By declaring a variable as httptest.NewRecorder(), I was able to monitor the output of each function locally and compare it to desired outputs. Unit tests were constructed for all methods finalized. In addition, server side unit tests remain as they were in the previous sprint.
