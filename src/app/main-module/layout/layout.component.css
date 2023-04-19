@@ -1,0 +1,48 @@
+::ng-deep [data-aos^=fade][data-aos^=fade] {
+    opacity: 1 !important;
+}
+
+.f-20 {
+    font-size: 20px;
+}
+
+.f-30 {
+    font-size: 30px;
+}
+
+.home-bg-img {
+    /* background: url(/assets/images/back.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100%;
+    z-index: 1;
+}
+
+.post-cont {
+    width: 70px;
+    height: 70px;
+}
+
+.post-img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-position: center;
+    background-position: 50%;
+}
+
+.post-header {
+    display: flex;
+    gap: 10px;
+}
+
+.post-header-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

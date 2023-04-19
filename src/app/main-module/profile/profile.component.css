@@ -1,0 +1,31 @@
+
+.p-container {
+    padding: 0;
+    border-radius: 18px;
+    margin-right: 12px;
+    height: fit-content;
+}
+
+.profile-pic-container {
+    height: 275px;
+    /* max-width: 280px; */
+    /* width: 274px; */
+    width: 100%;
+    border-radius: 18px;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.profile-pic {
+    width: 100%;
+    border-radius: 18px;
+    height: 100%;
+    object-fit: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-position: center;
+}
+
+ul li {
+    list-style: none !important;
+}

@@ -1,0 +1,97 @@
+<main id="main">
+
+    <section class="app-process pt-45" style="margin-top: 40px">
+        <div class="container">
+
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-lg-8 col-md-9 col-sm-12 card border-light mb-3">
+
+                    <h4 class="divider" style="padding: 15px 10px;">Recruiter's List</h4>
+
+                    <div class="card-body d-flex flex-wrap" [class.divider]="!last"
+                        *ngFor="let recuriter of recuriters; let last = last">
+
+                        <a class="job-container">
+                            <img class="person-img" [src]="recuriter.image || '/assets/images/male-16.jpg'"
+                                loading="lazy">
+                        </a>
+
+                        <div class="d-flex flex-column job-title">
+                            <h5 class="card-title">{{recuriter.name}}</h5>
+                            <p class="card-text">{{recuriter.role}}</p>
+                        </div>
+
+                        <div class="d-flex flex-row justify-content-end align-items-center" style="flex: 1; gap: 12px">
+
+                            <ng-container *ngIf="!recuriter.isInviteSended; else pendingRef">
+                                <button type="button" class="btn btn-primary"
+                                    (click)="openModal(recuriter, template)">Send Message</button>
+
+                                <button type="button" [disabled]="recuriter?.loading" (click)="onConnect(recuriter)"
+                                    class="btn btn-success d-flex justify-content-center align-items-center">
+
+                                    Connect &nbsp;&nbsp;
+
+                                    <div class="spinner-grow" role="status" style="width: 1.5rem; height: 1.5rem;"
+                                        *ngIf="recuriter?.loading">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
+
+                            </ng-container>
+
+                            <ng-template #pendingRef>
+                                <span class="pending-invite">Pending</span>
+                            </ng-template>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Message dialog -->
+<ng-template #template>
+
+    <div class="modal-header">
+
+        <!-- Modal Title -->
+        <h4 class="modal-title pull-left">{{selectedRecuriter?.name}}</h4>
+
+        <!-- Close Button -->
+        <button type="button" class="close pull-right" (click)="modalRef?.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+        <div class="form-floating">
+            <textarea class="form-control" [(ngModel)]="message" name="message_input" placeholder="Message"
+                id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Message</label>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modalRef?.hide()">Close</button>
+        <button type="button" class="btn btn-primary d-flex justify-content-center align-items-center"
+            (click)="onSendMessage()" [disabled]="selectedRecuriter?.message_sending || !message.trim()">
+            Send &nbsp;&nbsp;
+            <div class="spinner-grow" role="status" style="width: 1.5rem; height: 1.5rem;"
+                *ngIf="selectedRecuriter?.message_sending">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </button>
+    </div>
+
+</ng-template>

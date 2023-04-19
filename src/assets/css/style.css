@@ -1,0 +1,63 @@
+
+@charset "utf-8";
+
+body {
+  font-family: 'Roboto Condensed', sans-serif; 
+  color: #333;
+  overflow-x: hidden;
+  font-size: 13px;
+}
+
+a {
+  /*color: #7fa35c;*/
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8b8b8b;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik';
+  color: #252525;
+}
+.h1, h1 {
+    font-size: 2rem!important;
+}
+.h2, h2 {
+    font-size: 1.75rem!important;
+}
+.h3, h3 {
+    font-size: 1.50rem!important;
+}
+.h4, h4 {
+    font-size: 1.25rem!important;
+}
+.h5, h5 {
+    font-size: 1rem!important;
+}
+.h6, h6 {
+    font-size: .75rem!important;
+}
+
+*:focus {
+  box-shadow: none !important;
+}
+.form-select:focus, .form-control:focus {
+  border-color: #252525;
+}
+:focus-visible {
+    outline: none;
+}
+
+
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}

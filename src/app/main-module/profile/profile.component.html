@@ -1,0 +1,54 @@
+<div class="row d-flex justify-content-center" style="margin-top: 60px">
+
+    <div class="col-lg-8 col-md-9 col-sm-12">
+
+        <div class="row justify-content-center" style="padding: 20px 50px;">
+
+            <div class="card col-lg-4 col-md-4 col-sm-12 p-container">
+
+                <div class="process_panel profile-pic-container">
+                    <img class="profile-pic" [src]="loggedInUser?.profile_pic || '/assets/images/male-16.jpg'">
+                </div>
+
+                <div class="d-flex flex-column" style="padding: 20px; text-align: center;">
+                    <h4>{{loggedInUser?.name}}</h4>
+                </div>
+            </div>
+
+            <div class="col-lg-7 col-md-7 col-sm-12">
+            
+                <div class="col-lg-12">
+                    <div class="process_panel" style="margin-bottom: 25px;">
+                        <div class="process_heading">
+                            <h3>About Me:</h3>
+                        </div>
+                        <div class="process_text">
+                            <ul [innerHTML]="loggedInUser?.about"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="process_panel" style="margin-bottom: 25px;">
+                        <div class="process_heading">
+                            <h3 id="personal-info">Personal Info:</h3>
+                        </div>
+                        <div class="process_text">
+                            <ul >
+                                <li><b>Username: </b>&nbsp;&nbsp; <span>{{loggedInUser?.username}}</span></li><br/>
+                                <li><b>Email: </b>&nbsp;&nbsp; <span>{{loggedInUser?.email}}</span></li><br/>
+                                <li><b>Phone: </b>&nbsp;&nbsp; <span>{{loggedInUser?.phone}}</span></li><br/>
+                                <li><b>Address: </b>&nbsp;&nbsp; <span>{{loggedInUser?.address}}</span></li><br/>
+                                <li><b>Password: </b>&nbsp;&nbsp; <span>*******</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    
+    </div>
+
+</div>

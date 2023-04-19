@@ -1,0 +1,98 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,300;1,500&family=Manrope:wght@200;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+body {
+  font-size: 17px!important;
+  color: #333!important;
+  font-family: 'Roboto Condensed', sans-serif!important;
+  vertical-align: baseline;
+  line-height: 26px!important;
+  font-weight: 400!important;
+  overflow-x: hidden;
+}
+p a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none !important;
+  outline: none !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik';
+  color: #252525;
+  margin: 0 0 10px!important;
+  font-weight: 700!important;
+}
+
+.process_panel{float: left;width: 100%;padding: 25px 15px 15px;border: 1px solid #e7e7e7;
+  box-shadow: 0px 2px 5px -2px #ccc;min-height: 200px;margin-bottom: 3em;border-radius: 20px;}
+.process_heading{padding-bottom: 10px; float: left;width: 100%;border-bottom: 1px solid lightgray;margin-bottom: 15px;}
+.process_panel h4{float: left;width: 100%;margin-bottom: 15px;font-size: 16px}
+.process_text{float: left;width: 100%;}
+.process_text ul{margin: 0;padding: 0}
+.process_text ul li{float: left;list-style: disc;margin-left: 20px;}
+
+ 
+.rs-about .about-img {
+  position: relative;
+}
+.rs-about .about-img:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(33, 33, 33, 0.5);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.rs-about .about-img:hover:after {
+  opacity: 1;
+}
+.rs-about .about-img .popup-youtube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.rs-about .about-img .popup-youtube:after {
+  position: absolute;
+  font-family: FontAwesome;
+  content: "\f04b";
+  font-size: 36px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s ease 0s;
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  width: 80px;
+  text-align: center;
+  background: #ff3115;
+  border-radius: 50%;
+  padding-left: 8px;
+  color: #fff;
+}
+.rs-about .about-desc {
+  margin-bottom: 30px;
+}
+.rs-about .about-desc h2 {
+  font-size: 30px;
+  line-height: normal;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+.rs-about .about-desc p {
+  font-size: 17px;
+  line-height: 26px;
+  margin-bottom: 12px;
+}
+
+.about-desc p:last-child {
+  margin-bottom: 0;
+}

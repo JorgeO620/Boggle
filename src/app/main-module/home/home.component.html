@@ -1,0 +1,75 @@
+<section class="d-flex align-items-center">
+
+    <img class="w-full home-bg-img" src="/assets/images/back.png">
+
+    <!-- <div class="w-full home-bg-img"></div> -->
+
+</section>
+
+<main id="main" style="margin-top: 40px">
+
+    <section class="app-process pt-45">
+        <div class="container">
+
+            <div class="w-full home-bg-img"></div>
+
+            <div class="row">
+
+                <!-- POST AREA -->
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="row" *ngFor="let job of jobs">
+
+                        <div class="col-lg-12">
+
+                            <div class="process_panel" style="margin-bottom: 25px;">
+                                <div class="process_heading">
+                                    <h5>{{job.title}}</h5>
+                                </div>
+                                <div class="process_text">
+                                    <p>{{job.description}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- NEWS & EVENTS -->
+                <div class="col-lg-4 col-md-4 col-sm-12">
+
+                    <div class="col-lg-12">
+                        <div class="process_panel" style="margin-bottom: 25px;">
+                            <div class="process_heading">
+                                <h4 id="event">Events</h4>
+                            </div>
+                            <div class="process_text">
+                                <ul>
+                                    <li *ngFor="let item of events">{{item}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="process_panel">
+                            <div class="process_heading">
+                                <h4 id="news">News</h4>
+                            </div>
+                            <div class="process_text">
+                                <ul>
+                                    <li *ngFor="let item of news">{{item}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</main>

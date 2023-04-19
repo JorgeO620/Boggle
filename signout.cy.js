@@ -1,0 +1,23 @@
+describe('Signout Test cases', () => {
+  it('should visits', () => {
+    cy.visit('http://localhost:4200/auth/login')
+    .wait(1000)
+  })
+  it('should signout from main portal show login page', () => {
+    cy.visit('http://localhost:4200/auth/login')
+    .wait(1000)
+    cy.get('#username').type('Mahamil')
+    .wait(1000)
+    .get('#password').type('123456')
+    .wait(1000)
+    .get('#login-submit').click()
+    .wait(2000)
+    .wait(2000)
+    .get('#profileDp').click()
+    .wait(1000)
+    .get('#signout').click()
+    .wait(2000)
+    .url().should('eq', 'http://localhost:4200/auth/login')
+    .wait(1000)
+  })
+})
