@@ -12,6 +12,7 @@ import (
 type Account struct {
   Username string `json:"username"`
   Password string `json:"password"`
+  Friends []string
 }
 
 var db *sql.DB
