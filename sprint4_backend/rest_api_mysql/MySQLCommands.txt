@@ -1,0 +1,11 @@
+CREATE TABLE posts
+    (
+     postid INT unsigned NOT NULL AUTO_INCREMENT,
+     company VARCHAR(100) DEFAULT 'N/A',
+     posttitle VARCHAR(150) NOT NULL,
+     post VARCHAR(255) NOT NULL,
+     PRIMARY KEY (postid),
+     username VARCHAR(150) NOT NULL,
+     CONSTRAINT FK_accountsposts FOREIGN KEY (username)
+     REFERENCES accounts(username)
+     );
