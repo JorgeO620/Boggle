@@ -1,3 +1,10 @@
+CREATE TABLE accounts
+    (
+     username VARCHAR(150) NOT NULL,
+     password VARCHAR(150) NOT NULL,
+     PRIMARY KEY      (username)
+     );
+
 CREATE TABLE posts
     (
      postid INT unsigned NOT NULL AUTO_INCREMENT,
