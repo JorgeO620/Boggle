@@ -33,4 +33,4 @@ Install Go, MySQL and Postman to run the RESTful API. Make sure to create the sa
 1. go build
 2. go run .
 
-Afterwards, the program should be continously running and you can now send requests with Postman to retrieve, manipulate or create records. Example of body data that would be needed in the request for some of the methods can be seen in the PostmanRequestsDemo.txt file, which is in the same location as the other files. Make sure that your URL path matches the pattern that we have for our URL paths when testing, which can be seen in the video presentation for sprint 4.
+Afterwards, the program should be continously running and you can now send requests with Postman to retrieve, manipulate or create records from the MySQL database. Some examples of body data that would be needed in the request for some of the methods can be seen in the PostmanRequestsDemo.txt file, which is in the same location as the other files. Make sure that your URL path matches the pattern that we have for our URL paths when testing, which can be seen in the video presentation for sprint 4.
