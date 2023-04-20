@@ -33,16 +33,16 @@ In sprint 4, we changed the UI of the login screen and made it more proffesional
 
 In Sprint 4 we wrote unit tests for functions using the Restful API. By declaring a variable as httptest.NewRecorder(), I was able to monitor the output of each function locally and compare it to desired outputs. Unit tests were constructed for all methods finalized. In addition, server side unit tests remain as they were in the previous sprint.
 
--Change First and Last names
--Change current job
--Change current email address
--Change password
--Add contact
--Add past jobs
--Add education
--Add projects
--Test Restful: List of usernames
--Test Restful: Create account
--Test Restful: Change Password
--Test Restful: Delete Account
+- Change First and Last names
+- Change current job
+- Change current email address
+- Change password
+- Add contact
+- Add past jobs
+- Add education
+- Add projects
+- Test Restful: List of usernames
+- Test Restful: Create account
+- Test Restful: Change Password
+- Test Restful: Delete Account
 
